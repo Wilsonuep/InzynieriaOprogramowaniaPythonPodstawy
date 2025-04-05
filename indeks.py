@@ -35,22 +35,17 @@ Wymagania:
 
 
 def index_documents(documents: list[str], queries: list[str]) -> list[list[int]]:
-    """
-    Przetwarza dokumenty i zapytania, zwracając listy indeksów dokumentów,
-    w których występuje zapytanie, posortowane według częstości wystąpienia
-    danego wyrazu (malejąco), a w przypadku równych częstości - malejąco wg numeru dokumentu.
+    x = 0
+    list = []
+    for query in queries:
+        list_num = []
+        for document in documents:
+            x = document.count(query)
+            list_num.append(x)
+            list_order = sorted(range(len(list_num)), key=lambda i: list_num[i], reverse=True)
+        list.append(list_order)
 
-    Args:
-        documents (list[str]): Lista dokumentów (każdy dokument to ciąg znaków).
-        queries (list[str]): Lista zapytań (każdy zapytanie to pojedynczy wyraz).
-
-    Returns:
-        list[list[int]]: Lista wyników dla kolejnych zapytań.
-    """
-    ### TUTAJ PODAJ ROZWIĄZANIE ZADANIA
-
-    ### return [[]] - powinno być zmienione i zwrócić prawdziwy wynik (zgodny z oczekiwaniami)
-    return [[]]
+    return list
 
 
 # Przykładowe wywołanie:
