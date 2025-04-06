@@ -31,6 +31,8 @@ Wymagania:
 - Przetwarzanie tekstu – można użyć podziału na wyrazy, ignorując interpunkcję i wielkość liter.
 - Obliczenie liczby wystąpień danego wyrazu w każdym dokumencie.
 - Dla każdego zapytania, zwrócenie posortowanej listy indeksów dokumentów.
+
+123
 """
 
 

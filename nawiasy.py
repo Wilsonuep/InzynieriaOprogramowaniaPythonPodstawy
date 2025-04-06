@@ -18,6 +18,9 @@ Przykładowe wejścia (False):
 Wymagania:
 - Implementacja funkcji `check_parentheses(s: str) -> bool`.
 - Użycie stosu do weryfikacji poprawności nawiasów.
+
+123
+
 """
 
 def check_parentheses(s: str) -> bool:

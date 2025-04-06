@@ -15,6 +15,9 @@ Przykładowe wyjście:
 Wymagania:
 - Implementacja funkcji `verify_pesel(pesel: str) -> int`.
 - Użycie algorytmu weryfikacji opisanej powyżej.
+
+123
+
 """
 
 
