@@ -19,22 +19,25 @@ Wymagania:
 
 
 def verify_pesel(pesel: str) -> int:
-    """
-    Weryfikuje numer PESEL.
-
-    Args:
-        pesel (str): Numer PESEL w postaci ciągu 11 znaków.
-
-    Returns:
-        int: 1 jeśli numer jest poprawny, 0 jeśli nie.
-    """
-    ### TUTAJ PODAJ ROZWIĄZANIE ZADANIA
-
-    ### return 0 - powinno być zmienione i zwrócić prawdziwy wynik (zgodny z oczekiwaniami)
-    return 0
+    control_num = 0
+    numbers = []
+    weight = [1,3,7,9,1,3,7,9,1,3,0]
+    for char in pesel:
+        numbers.append(int(char))
+    for i in range(len(numbers)):
+        control_num += weight[i] * numbers[i] % 10
+    control_num = control_num % 10
+    if control_num != 0:
+        control_num = 10 - control_num
+    if numbers[-1] == control_num:
+        return 1
+    else: return 0
 
 
 # Przykładowe wywołanie:
 if __name__ == "__main__":
     pesel_input = "97082123152"
-    print(verify_pesel(pesel_input))  # Oczekiwane wyjście: 0
+    print(verify_pesel(pesel_input)) # Oczekiwane wyjście: 0
+    print(verify_pesel("03272509730")) # Oczekiwane wyjście: 1
+    print(verify_pesel("02070803628")) # Oczekiwane wyjście: 1
+    print(verify_pesel("47738929293"))  # Oczekiwane wyjście: 0
